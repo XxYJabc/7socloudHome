@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鄢杰的项目</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            background-image: url('https://pan.7so.top/f/xYXix/%7B%E5%B7%B2%E5%8E%8B%E7%BC%A9%7Dwallhaven-1jmrw1_1920x1080.png'); /* PC端背景图片URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        @media (max-width: 768px) {
+            body {
+                background-image: url('https://pan.7so.top/f/yZLUL/%7B%E6%89%8B%E6%9C%BA%20%E6%9C%AA%E5%8E%8B%E7%BC%A9%7D238cb324591f8b545676457225f050a.png'); /* 移动端背景图片URL */
+                background-attachment: scroll;
+            }
+        }
+        header {
+            background-color: rgba(135, 206, 250, 0.8); /* 半透明浅蓝色背景 */
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            flex: 1;
+        }
+        .project {
+            background-color: rgba(255, 255, 255, 0.6); /* 调整透明度 */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 20px;
+            width: calc(50% - 40px);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .project:hover {
+            transform: scale(1.05);
+        }
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .project h2 {
+            color: #87cefa;
+        }
+        footer {
+            background-color: rgba(135, 206, 250, 0.8); /* 半透明浅蓝色背景 */
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .project {
+                width: calc(100% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>鄢杰的项目展示</h1>
+    </header>
+    <div class="container">
+        <a class="project" href="https://pan.7so.top">
+            <img src="https://pan.7so.top/api/v3/user/avatar/vYH7/l" alt="七嗖云盘图标">
+            <h2>七嗖云盘</h2>
+        </a>
+        <a class="project" href="https://yanjie233.top">
+            <img src="https://pan.7so.top/api/v3/user/avatar/kRfO/l" alt="鄢杰的博客图标">
+            <h2>鄢杰的博客</h2>
+        </a>
+    </div>
+    <footer>
+        <p>&copy; 2023-2024 鄢杰&七嗖云 Chat GPT4o协助</p>
+    </footer>
+</body>
+</html>
