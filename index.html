@@ -1,66 +1,101 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>七嗖雲盤跳轉頁·線路選擇</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 20px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px;
-      cursor: pointer;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 16px;
-    }
-  </style>
-  <script>
-    // 检测用户是否支持IPv6
-    function checkIPv6Support() {
-      return new Promise(resolve => {
-        const img = new Image();
-        img.onload = () => resolve(true);
-        img.onerror = () => resolve(false);
-        img.src = "https://ipw.cn/logo.svg"; // 这里可以替换成任何支持IPv6的站点
-      });
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>七嗖雲盤·線路選擇</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-    // 自动优选路线
-    async function autoSelectRoute() {
-      const ipv6Supported = await checkIPv6Support();
-      if (ipv6Supported) {
-        window.location.replace("https://panv6.7so.top");
-      } else {
-        window.location.replace("https://pan.7so.top");
-      }
-    }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
 
-    // 手动选择IPv4路线
-    function selectIPv4Route() {
-      window.location.replace("https://pan.7so.top");
-    }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
 
-    // 手动选择IPv6路线
-    function selectIPv6Route() {
-      window.location.replace("https://panv6.7so.top");
-    }
-  </script>
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        // 检测用户是否支持IPv6
+        function checkIPv6Support() {
+            return new Promise(resolve => {
+                const img = new Image();
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+                img.src = "https://ipw.cn/logo.svg"; // 这里可以替换成任何支持IPv6的站点
+            });
+        }
+
+        // 自动优选路线
+        async function autoSelectRoute() {
+            const ipv6Supported = await checkIPv6Support();
+            if (ipv6Supported) {
+                window.location.replace("https://panv6.7so.top");
+            } else {
+                window.location.replace("https://pan.7so.top");
+            }
+        }
+
+        // 手动选择IPv4路线
+        function selectIPv4Route() {
+            window.location.replace("https://pan.7so.top");
+        }
+
+        // 手动选择IPv6路线
+        function selectIPv6Route() {
+            window.location.replace("https://panv6.7so.top");
+        }
+    </script>
 </head>
+
 <body>
-  <h1>七嗖雲盤·線路選擇</h1>
-  <p>请选择您要使用的线路：</p>
-  <button class="btn" onclick="selectIPv4Route()">IPv4 线路</button>
-  <button class="btn" onclick="selectIPv6Route()">IPv6 线路</button>
-  <p>或者点击下面的按钮进行自动优选：</p>
-  <button class="btn" onclick="autoSelectRoute()">自动优选线路</button>
+    <div class="container">
+        <h1>七嗖雲盤·線路選擇</h1>
+        <p>请选择您要使用的线路：</p>
+        <button class="btn" onclick="selectIPv4Route()">IPv4 线路</button>
+        <button class="btn" onclick="selectIPv6Route()">IPv6 线路</button>
+        <p>或者点击下面的按钮进行自动优选：</p>
+        <button class="btn" onclick="autoSelectRoute()">自动优选线路</button>
+    </div>
 </body>
+
 </html>
