@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5;url=https://pan.7so.top">
+    <title>七嗖云D盾防御页</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 500px;
+        }
+        .status {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 10px 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .jump-message {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        img {
+            width: 100px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const statuses = document.querySelectorAll(".status");
+            const jumpMessage = document.querySelector(".jump-message");
+            let delay = 0;
+
+            statuses.forEach((status, index) => {
+                setTimeout(() => {
+                    status.style.opacity = 1;
+                    setTimeout(() => {
+                        status.style.opacity = 0;
+                        if (index === statuses.length - 1) {
+                            setTimeout(() => {
+                                jumpMessage.style.opacity = 1;
+                            }, 1000);
+                        }
+                    }, 1000); // Display each status for 1 second
+                }, delay);
+                delay += 2000; // Wait 2 seconds before showing the next status
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="https://pan.7so.top/f/lYQRhX/ddos_shield.png" alt="DDOS Shield">
+        <div class="message">
+            <p class="status">已建立HTTPS安全连接</p>
+            <p class="status">已检测流量安全</p>
+            <p class="status">欢迎！</p>
+        </div>
+        <p class="jump-message">页面即将跳转...</p>
+    </div>
+    <div class="footer">
+        2023-2024 七嗖云D盾
+    </div>
+</body>
+</html>
